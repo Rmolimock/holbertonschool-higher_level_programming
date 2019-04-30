@@ -8,4 +8,3 @@ elif number > 0:
 else:
     text = "is negative"
 print("{:d}".format(number), text)
-
