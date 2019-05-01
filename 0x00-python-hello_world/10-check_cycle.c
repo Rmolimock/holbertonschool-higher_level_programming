@@ -20,6 +20,8 @@ int check_cycle(listint_t *list)
 	do {
 		if (one->next == NULL || two->next->next == NULL)
 			return (0);
+		if (two->next == NULL)
+			return (0);
 		one = one->next;
 		if (two->next != NULL)
 			two = two->next->next;
