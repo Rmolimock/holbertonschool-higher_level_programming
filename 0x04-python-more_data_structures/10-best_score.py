@@ -2,8 +2,9 @@
 def best_score(a_dictionary):
     if a_dictionary is None:
         return None
-    sum = 0
-    for key in a_dictionary.keys():
-        if a_dictionary[key] > sum:
-            sum = a_dictionary[key]
-    return sum
+    sum, name = 0, None
+    for (key, value) in a_dictionary.items():
+        if value > sum:
+            sum = value
+            name = key
+    return name
