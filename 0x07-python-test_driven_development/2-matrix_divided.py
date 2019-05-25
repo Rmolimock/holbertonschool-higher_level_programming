@@ -11,11 +11,11 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
         return matrix
-    if not type(matrix) is list:
+    if not isinstance(matrix, list):
         raise TypeError("matrix must be a matrix (list of lists) of " +
                         "integers/floats")
         return matrix
-    if not type(matrix[0]) is list:
+    if not isinstance(matrix[0], list):
         raise TypeError("matrix must be a matrix (list of lists) of " +
                         "integers/floats")
         return matrix
@@ -23,7 +23,7 @@ def matrix_divided(matrix, div):
     new = []
     for y in matrix:
         for x in y:
-            if not type(y) is list: 
+            if not isinstance(y, list): 
                 raise TypeError("matrix must be a matrix (list of lists) of " +
                                 "integers/floats")
                 return matrix
