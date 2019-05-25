@@ -1,0 +1,18 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("This? is. a test:end")
+This
+<BLANKLINE>
+is
+<BLANKLINE>
+a test
+<BLANKLINE>
+end
+>>> text_indentation(33)
+Traceback (most recent call last):
+TypeError: text must be a string
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+>>> text_indentation("normal string")
+normal string
+>>> text_indentation("")
