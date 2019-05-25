@@ -1,0 +1,29 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(2, 3)
+5
+>>> add_integer(2, -3)
+-1
+>>> add_integer(-3, 2)
+-1
+>>> add_integer(2, 0)
+2
+>>> add_integer(0, 2)
+2
+>>> add_integer(2, None)
+Traceback (most recent call last):
+TypeError: None must be an integer
+>>> add_integer(None, 2)
+Traceback (most recent call last):
+TypeError: None must be an integer
+>>> add_integer(2, 'string')
+Traceback (most recent call last):
+TypeError: string must be an integer
+>>> add_integer('string', 2)
+Traceback (most recent call last):
+TypeError: string must be an integer
+>>> add_integer(2, float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+>>> add_integer(float('inf'), 2)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
