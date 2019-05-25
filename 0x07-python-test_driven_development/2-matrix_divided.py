@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-'''
+'''This module contains the matrix_divided function
 '''
 def matrix_divided(matrix, div):
-    '''
+    '''matrix_divided divides each int/float in a list of lists
+    by a given number
     '''
     if not isinstance(div, (float, int)):
         raise TypeError("div must be a number")
