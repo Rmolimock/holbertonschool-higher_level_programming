@@ -8,8 +8,15 @@ matrix_divided = __import__('2-matrix_divided').matrix_divided
 >>> matrix_divided(matrix, 0)
 Traceback (most recent call last):
 ZeroDivisionError: division by zero
+>>> matrix = [[1, "string", 3], [1, 2, 3]]
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = [[1, 2.2, 3], [1, 2, 3]]
+>>> matrix_divided(matrix, 2)
+[0.5, 1.1, 1.5, 0.5, 1.0, 1.5]
 >>> matrix_divided(matrix, float('inf'))
-[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 >>> matrix_divided(float('inf'), 33)
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
