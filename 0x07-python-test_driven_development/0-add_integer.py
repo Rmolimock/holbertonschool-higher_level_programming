@@ -7,8 +7,8 @@ def add_integer(a, b=98):
     '''add_integer adds two integers and/or floats together
     and returns an integer of their sum
     '''
-    if not type(a) is int and not type(a) is float:
-        raise TypeError("{} must be an integer".format(a))
-    if not type(b) is int and not type(b) is float:
-        raise TypeError("{} must be an integer".format(b))
+    if not isinstance(a, (int, float)):
+        raise TypeError("a must be an integer")
+    if not isinstance(b, (int, float)):
+        raise TypeError("b must be an integer")
     return int(a) + int(b)
