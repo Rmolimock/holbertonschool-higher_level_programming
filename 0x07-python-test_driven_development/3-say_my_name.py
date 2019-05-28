@@ -12,4 +12,4 @@ def say_my_name(first_name, last_name=""):
     elif last_name is None:
         raise TypeError("last_name must be a string")
     else:
-        print("{} {}".format(first_name, last_name))
+        print("My name is {} {}".format(first_name, last_name))
