@@ -1,0 +1,15 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> obj = BaseGeometry()
+>>> obj.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+>>> obj.integer_validator("zero", 0)
+Traceback (most recent call last):
+ValueError: zero must be greater than 0
+>>> obj.integer_validator("None", None)
+Traceback (most recent call last):
+TypeError: None must be an integer
+>>> obj.integer_validator("string", "string")
+Traceback (most recent call last):
+TypeError: string must be an integer
+>>> obj.integer_validator(10, 10)
