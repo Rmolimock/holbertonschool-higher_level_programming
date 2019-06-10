@@ -113,3 +113,12 @@ class Rectangle(Base):
             for x in range(self.width + 1):
                 ret += '\n' if x == self.width else '#'
         print(ret, end="")
+
+    def to_dictionary(self):
+        new = {}
+        new['id'] = self.id
+        new['width'] = self.width
+        new['height'] = self.height
+        new['x'] = self.x
+        new['y'] = self.y
+        return new
