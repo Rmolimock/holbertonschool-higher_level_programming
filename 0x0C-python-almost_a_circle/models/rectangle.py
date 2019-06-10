@@ -66,6 +66,9 @@ class Rectangle(Base):
         else:
             self.__y = value
 
+    def __str__(self):
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+
     def area(self):
         if self.width == 0 or self.height == 0:
             return 0
