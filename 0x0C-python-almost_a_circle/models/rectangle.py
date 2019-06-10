@@ -4,6 +4,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     '''Rectangle has a height/width and x/y position'''
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -64,3 +65,15 @@ class Rectangle(Base):
             raise ValueError('y must be >= 0')
         else:
             self.__y = value
+
+    def area(self):
+        if self.width == 0 or self.height == 0:
+            return 0
+        else:
+            return self.width * self.height
+
+    def display(self):
+        tmp = ''
+        for y in range(self.height):
+            for x in range(self.width):
+                print('#', end='\n' if x == self.width - 1 else '')
