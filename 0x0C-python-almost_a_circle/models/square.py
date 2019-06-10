@@ -21,3 +21,25 @@ class Square(Rectangle):
     def __str__(self):
         return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        for (i, arg) in enumerate(args):
+            if i == 0:
+                self.id = int(arg)
+            elif i == 1:
+                self.size = int(arg)
+            elif i == 2:
+                self.x = int(arg)
+            elif i == 3:
+                self.y = int(arg)
+        if args is not None and len(args) == 0:
+            for (k, v) in kwargs.items():
+                if k == 'id':
+                    self.id = int(v)
+                elif k == 'size':
+                    self.size = int(v)
+                elif k == 'x':
+                    self.x = int(v)
+                elif k == 'y':
+                    self.y = int(v)
+ 
