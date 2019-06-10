@@ -70,7 +70,7 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.x, self.y, self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         for (i, arg) in enumerate(args):
             if i == 0:
                 self.id = int(arg)
@@ -82,6 +82,18 @@ class Rectangle(Base):
                 self.x = int(arg)
             elif i == 4:
                 self.y = int(arg)
+        if args is not None and len(args) == 0:
+            for (k, v) in kwargs.items():
+                if k == 'id':
+                    self.id = int(v)
+                elif k == 'width':
+                    self.width = int(v)
+                elif k == 'height':
+                    self.height = int(v)
+                elif k == 'x':
+                    self.x = int(v)
+                elif k == 'y':
+                    self.y = int(v)
 
     def area(self):
         if self.width == 0 or self.height == 0:
