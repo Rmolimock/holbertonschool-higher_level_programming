@@ -7,8 +7,6 @@ from models.base import Base
 
 class Rectangle(Base):
     '''Rectangle has a height/width and x/y position'''
-    print_symbol = '#'
-
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.width = width
@@ -69,7 +67,21 @@ class Rectangle(Base):
             self.__y = value
 
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args):
+        for (i, arg) in enumerate(args):
+            if i == 0:
+                self.id = int(arg)
+            elif i == 1:
+                self.width = int(arg)
+            elif i == 2:
+                self.height = int(arg)
+            elif i == 3:
+                self.x = int(arg)
+            elif i == 4:
+                self.y = int(arg)
 
     def area(self):
         if self.width == 0 or self.height == 0:
@@ -87,5 +99,5 @@ class Rectangle(Base):
             for x_pos in range(self.x):
                 ret += ' '
             for x in range(self.width + 1):
-                ret += '\n' if x == self.width else str(self.print_symbol)
+                ret += '\n' if x == self.width else '#'
         print(ret, end="")
