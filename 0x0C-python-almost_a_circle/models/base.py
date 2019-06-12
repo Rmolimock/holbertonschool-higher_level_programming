@@ -28,3 +28,22 @@ class Base():
             raise ValueError('list_dictionaries must contain dictionaries')
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        if not isinstance(list_objs, list):
+            raise TypeError('list_objs must be a list of objects')
+        obj_class = list_objs[0].__class__
+        if not obj_class == cls:
+            raise TypeError('objects in list_objs must be same type')
+        list_dicts = []
+        for obj in list_objs:
+            if not type(obj) == obj_class:
+                raise TypeError('objects in list_objs must be of same type')
+            else:
+                obj_dict = obj.to_dictionary()
+                list_dicts.append(obj_dict)
+        json_string = cls.to_json_string(list_dicts)
+        filename = type(list_objs[0]).__name__ + '.json'
+        with open(filename, mode="w+", encoding="utf-8") as f:
+            return f.write(json_string)
