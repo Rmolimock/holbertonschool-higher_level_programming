@@ -47,3 +47,4 @@ class Base():
         filename = type(list_objs[0]).__name__ + '.json'
         with open(filename, mode="w+", encoding="utf-8") as f:
             return f.write(json_string)
+
