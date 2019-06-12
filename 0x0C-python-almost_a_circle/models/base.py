@@ -11,6 +11,7 @@ class Base():
     __nb_objects = 0
 
     def __init__(self, id=None):
+        ''' '''
         if id is not None:
             self.id = id
         else:
@@ -18,6 +19,7 @@ class Base():
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
+        ''' '''
         if list_dictionaries is None or list_dictionaries == []:
             return '"[]"'
         elif not isinstance(list_dictionaries, list):
@@ -31,6 +33,7 @@ class Base():
 
     @classmethod
     def save_to_file(cls, list_objs):
+        ''' '''
         if not isinstance(list_objs, list):
             raise TypeError('list_objs must be a list of objects')
         obj_class = list_objs[0].__class__
@@ -47,4 +50,3 @@ class Base():
         filename = type(list_objs[0]).__name__ + '.json'
         with open(filename, mode="w+", encoding="utf-8") as f:
             return f.write(json_string)
-
