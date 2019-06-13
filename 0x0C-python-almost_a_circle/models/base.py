@@ -18,15 +18,10 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        '''return a json string of list_dictionaries'''
-        if list_dictionaries is None or list_dictionaries == []:
-            return '"[]"'
-        elif not isinstance(list_dictionaries, list):
-            raise TypeError('list_dictionaries must be a list of dicts')
-        elif not isinstance(list_dictionaries[0], dict):
-            raise ValueError('list_dictionaries must contain dictionaries')
-        else:
-            return json.dumps(list_dictionaries)
+        """to_json_string returns json string of dicts in list_dicts"""
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
