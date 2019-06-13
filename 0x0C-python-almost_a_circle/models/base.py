@@ -39,3 +39,16 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''instantiate objects from dictionary of attributes'''
+        if not isinstance(dictionary, dict):
+            raise TypeError('dictionary must be a dict')
+        else:
+            if cls.__name__ == 'Square':
+                new_obj = cls(3)
+            else:
+                new_obj = cls(3, 3)
+            new_obj.update(**dictionary)
+            return new_obj
