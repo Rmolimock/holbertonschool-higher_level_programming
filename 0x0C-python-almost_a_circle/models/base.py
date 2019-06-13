@@ -32,3 +32,10 @@ class Base:
             else:
                     f.write(Base.to_json_string([obj.to_dictionary()
                                                  for obj in list_objs]))
+
+    def from_json_string(json_string):
+        '''convert json string of obj dicts into list of same'''
+        if json_string is None or json_string == "":
+            return []
+        else:
+            return json.loads(json_string)
