@@ -36,10 +36,14 @@ class Base:
         if list_objs is None:
             with open("{}.json".format(cls.__name__), "w") as f:
                 f.write(to_json_string([]))
+        elif not isinstance(list_objs, list):
+            raise TypeError('list_obj must be a list')
         else:
-            tmp = []
+            list_dicts = []
             with open("{}.json".format(cls.__name__), "w") as f:
-                for i in list_objs:
-                    if issubclass(type(i), Base):
-                        tmp.append(i.to_dictionary())
-                f.write(Base.to_json_string(tmp))
+                for obj in list_objs:
+                    if issubclass(type(obj), Base):
+                        list_dicts.append(obj.to_dictionary())
+                    else:
+                        raise TypeError('list_dicts must be a list of objects')
+                f.write(Base.to_json_string(list_dicts))
