@@ -20,24 +20,15 @@ class Base:
     def to_json_string(list_dictionaries):
         """to_json_string returns json string of dicts in list_dicts"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
+            return '[]'
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        '''save a list of dictionaries of objects in list_objs
-        to a json file'''
-        if list_objs is None:
-            with open("{}.json".format(cls.__name__), "w") as f:
-                f.write(to_json_string([]))
-        elif not isinstance(list_objs, list):
-            raise TypeError('list_obj must be a list')
-        else:
-            list_dicts = []
-            with open("{}.json".format(cls.__name__), "w") as f:
-                for obj in list_objs:
-                    if issubclass(type(obj), Base):
-                        list_dicts.append(obj.to_dictionary())
-                    else:
-                        raise TypeError('list_dicts must be a list of objects')
-                f.write(Base.to_json_string(list_dicts))
+        '''save json representation of objects in list_objs into a file'''
+        with open("{}.json".format(cls.__name__), "w") as f:
+            if list_objs is None:
+                    f.write(to_json_string([]))
+            else:
+                    f.write(Base.to_json_string([x.to_dictionary()
+                                                 for x in list_objs]))
