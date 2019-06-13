@@ -1,4 +1,4 @@
-i!/usr/bin/python3
+#!/usr/bin/python3
 '''This module contains one class, Square'''
 
 
@@ -12,7 +12,7 @@ class Square(Rectangle):
     @property
     def size(self):
         '''getter for self.width'''
-       return self.width
+        return self.width
 
     @size.setter
     def size(self, value):
