@@ -52,3 +52,13 @@ class Base:
                 new_obj = cls(3, 3)
             new_obj.update(**dictionary)
             return new_obj
+
+    @classmethod
+    def load_from_file(cls):
+        '''return a list of objects from a classes json file'''
+        try:
+            with open("{}.json".format(cls.__name__), "r") as f:
+                obj_list = cls.from_json_string(f.read())
+                return [cls.create(**obj) for obj in obj_list]
+        except:
+            return []
