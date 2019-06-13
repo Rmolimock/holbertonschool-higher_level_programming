@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+i!/usr/bin/python3
 '''This module contains one class, Square'''
 
 
@@ -11,18 +11,22 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        return self.width
+        '''getter for self.width'''
+       return self.width
 
     @size.setter
     def size(self, value):
+        '''setter for self.width and self.height'''
         self.width = value
         self.height = value
 
     def __str__(self):
+        '''return brief description of square'''
         return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
+        '''update attributes of square'''
         for (i, arg) in enumerate(args):
             if i == 0:
                 self.id = int(arg)
@@ -44,6 +48,7 @@ class Square(Rectangle):
                     self.y = int(v)
 
     def to_dictionary(self):
+        '''return dictionary of squares attributes'''
         new = {}
         new['id'] = self.id
         new['size'] = self.width
