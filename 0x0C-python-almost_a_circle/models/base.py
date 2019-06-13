@@ -22,8 +22,6 @@ class Base:
             return '"[]"'
         elif not isinstance(list_dictionaries, list):
             raise TypeError('list_dictionaries must be a list of dicts')
-        elif len(list_dictionaries) < 0:
-            raise ValueError('list_dictionaries must contain dictionaries')
         elif not isinstance(list_dictionaries[0], dict):
             raise ValueError('list_dictionaries must contain dictionaries')
         else:
