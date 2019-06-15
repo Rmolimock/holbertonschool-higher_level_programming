@@ -79,6 +79,16 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.x, self.y, self.width, self.height)
 
+    def to_dictionary(self):
+        '''return a dictionary of attributes'''
+        new = {}
+        new['id'] = self.id
+        new['width'] = self.width
+        new['height'] = self.height
+        new['x'] = self.x
+        new['y'] = self.y
+        return new
+
     def update(self, *args, **kwargs):
         '''update the object with new attribute values'''
         for (i, arg) in enumerate(args):
