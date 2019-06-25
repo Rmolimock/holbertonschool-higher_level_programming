@@ -2,7 +2,7 @@
 
 In this Python repo I will be completing python assignments at Holberton School.
 
-All Holberton Python projects will be found in the 0x00-0xEE projects.
+All Holberton Python projects will be found in the "0x00..." projects.
 
 All code follows pep8 style per Holberton specifications.
 ## Getting Started
@@ -31,7 +31,7 @@ All code follows pep8 style per Holberton specifications.
 
 Clone the repository into a new directory
 
-`$ git clone https://github.com/BennettDixon/holbertonschool-higher_level_programming.git`
+`$ git clone https://github.com/Rmolimock/holbertonschool-higher_level_programming.git`
 
 ## Coding Style Tests
 
