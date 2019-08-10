@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 '''
-    Lists all states from a given database
+    Lists all states from a given database starting with N
 '''
 import MySQLdb
 from sys import argv
