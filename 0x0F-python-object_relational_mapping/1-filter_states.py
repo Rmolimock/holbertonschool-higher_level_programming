@@ -14,7 +14,8 @@ if __name__ == "__main__":
     rows = cursor.fetchall()
 
     for eachRow in rows:
-        print(eachRow)
+        if eachRow[1].startswith("N"):
+            print(eachRow)
 
     cursor.close()
     connection.close()
