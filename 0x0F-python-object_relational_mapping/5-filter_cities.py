@@ -14,8 +14,12 @@ if __name__ == "__main__":
     cursor.execute(selection, (argv[4],))
     rows = cursor.fetchall()
 
+    ret = ""
+    flag = False
     for eachRow in rows:
-        print(eachRow)
-
+        ret += ', ' if flag else ''
+        flag = True
+        ret += eachRow[0]
+    print(ret)
     cursor.close()
     connection.close()
