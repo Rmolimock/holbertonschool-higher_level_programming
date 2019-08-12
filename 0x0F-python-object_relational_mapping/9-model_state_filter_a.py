@@ -23,3 +23,4 @@ if __name__ == "__main__":
 
     for item in query:
         print("{}: {}".format(item.id, item.name))
+    session().close()
