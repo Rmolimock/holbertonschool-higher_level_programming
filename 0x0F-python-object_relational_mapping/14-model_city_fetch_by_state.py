@@ -3,6 +3,7 @@
    change the name value of a row in states
 '''
 import sys
+from model_city import City
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
