@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# 
+# send request with parameter, display response as JSON
 import sys
 import requests
 
