@@ -5,7 +5,10 @@ import requests
 
 if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
-    value = sys.argv[1] if len(sys.argv) > 1 else value = ""
+    if len(sys.argv) > 1:
+        value = sys.argv[1]
+    else:
+        value = ""
     param = {"q": value}
     response = requests.post(url, param)
     try:
