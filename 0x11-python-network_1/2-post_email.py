@@ -11,4 +11,4 @@ if __name__ == "__main__":
     post = Request(url, content)
 
     with urlopen(post) as request:
-        response = request.read().decode('utf-8')
+	print(request.read().decode('utf-8'))
