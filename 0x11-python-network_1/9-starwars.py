@@ -9,6 +9,5 @@ if __name__ == "__main__":
     response = requests.get(url)
     json_format = response.json()
     print("Number of results: " + str(json_format['count']))
-    for k, v in json_format['results'][0].items():
-        if k == 'name':
-            print(v)
+    for ret_dict in json_format['results']:
+        print(ret_dict['name'])
